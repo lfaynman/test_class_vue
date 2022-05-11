@@ -4,6 +4,7 @@
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "babel-loader": "^8.2.5",
+    "vue-cli": "^2.9.6",
     "webpack": "^5.72.0"
   },
   "name": "work",

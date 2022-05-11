@@ -15,9 +15,9 @@
 <body>
     <h1>css lab</h1>
     <section id="myapp">
-        <div class="demo" :class="div1Selected? 'demo is1Selected':'demo'" @click="divSelected(1)">Mountain</div>
-        <div class="demo" :class="div2Selected? 'demo is2Selected':'demo'" @click="divSelected(2)">Ocean</div>
-        <div class="demo" :class="div3Selected? 'demo is3Selected':'demo'" @click="divSelected(3)">Sky</div>
+        <div :class="['demo', {is1Selected:div1Selected}]" @click="divSelected(1)">Mountain</div>
+        <div :class="['demo', {is2Selected:div2Selected}]" @click="divSelected(2)">Ocean</div>
+        <div :class="['demo', {is3Selected:div3Selected}]" @click="divSelected(3)">Sky</div>
     </section>
 
 </body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js" async defer></script>
+</head>
+
+<body>
+    <h1>conditional rendering</h1>
+    <section id="app">
+        <input type="text" />
+        <button>add a course</button>
+        <p v-if="courses.length===0">No course</p>
+        <ul v-else>
+            <li v-for="(c,i) in courses" @click="removeCourse(i)">
+                [{{i}}],{{c}}<input type="text" @click.stop/></li>
+        </ul>
+        <!--for explain-->
+        <!-- <ul>
+                <li v-for="v in {name:'POOP', duration:35, location:'taipei',instructor:'mark ho'}">{{v}}</li>
+            </ul>
+
+            <ul>
+                <li v-for="(v,k) in {name:'POOP', duration:35, location:'taipei',instructor:'mark ho'}">{{k}}/{{v}}</li>
+            </ul>
+            <ul>
+                <li v-for="(v,k,i) in {name:'POOP', duration:35, location:'taipei',instructor:'mark ho'}">[{{i}}]/{{k}}/{{v}}</li>
+            </ul>
+ -->
+        <!--bla bla bla bla bla應該可以看得到-->
+    </section>
+</body>
+
+</html>

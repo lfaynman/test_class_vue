@@ -3,6 +3,7 @@
     <h2>{{ id }}</h2>
     <button @click="toggleCourseDetail">show detail</button>
     <button @click="toggleCurrent">修改本地端</button>
+    <button @click="toggleParentCurrent">修改上層current</button>
     <ul v-if="detailsVisible">
       <li>{{ name }}</li>
       <li>{{ duration }}</li>
@@ -37,6 +38,9 @@ export default {
     },
     toggleCurrent() {
       this.isCurrent = !this.isCurrent;
+    },
+    toggleParentCurrent() {
+      this.$emit("toggle-current", this.id);
     },
   },
 };

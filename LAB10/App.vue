@@ -3,21 +3,12 @@
     <h1>hello template from vue!</h1>
     <ul>
       <course-intro
-        id="poop"
-        name="python oop"
-        :duration="35"
-        :current="true"
-      ></course-intro>
-      <course-intro
-        id="bdpy"
-        name="python big data"
-        :duration="3"
-        :current="false"
-      ></course-intro>
-      <course-intro
-        id="pykt"
-        name="keras tensorflow"
-       :duration="35"
+        v-for="c in courses"
+        :key="c.id"
+        :id="c.id"
+        :name="c.name"
+        :duration="c.duration"
+        :current="c.current"
       ></course-intro>
     </ul>
   </div>
@@ -27,7 +18,22 @@
 export default {
   //  components: { CourseIntro },
   data() {
-    return { courses: [{ id: "poop", name: "python oop", duration: 35 }] };
+    return {
+      courses: [
+        {
+          id: "poop",
+          name: "python and object oriented programming",
+          duration: 35,
+          current: true,
+        },
+        {
+          id: "BDPY",
+          name: "python and big data",
+          duration: 35,
+          current: false,
+        },
+      ],
+    };
   },
 };
 </script>

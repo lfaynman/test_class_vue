@@ -14,16 +14,9 @@
 
 <body>
     <section id="app">
-        <ul>
-            <li v-for="c in courses" :key="c.id">
-                <h2>{{c.id}}</h2>
-                <button @click="toggleCourseDetail">show details</button>
-                <ul v-if="detailsVisible">
-                    <li>{{c.name}}</li>
-                    <li>{{c.duration}}</li>
-                </ul>
-            </li>
-        </ul>
+        <course-content></course-content>
+        <course-content></course-content>
+        <course-content></course-content>
 sg    </section>
 
 </body>

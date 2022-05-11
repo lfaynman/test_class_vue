@@ -19,22 +19,11 @@
         <button>add a course</button>
         <p v-if="courses.length===0">No course</p>
         <ul v-else>
-            <li v-for="(c,i) in courses" @click="removeCourse(i)">
-                [{{i}}],{{c}}<input type="text" @click.stop/></li>
-        </ul>
-        <!--for explain-->
-        <!-- <ul>
-                <li v-for="v in {name:'POOP', duration:35, location:'taipei',instructor:'mark ho'}">{{v}}</li>
-            </ul>
+            <li v-for="(c,i) in courses" :key="c" @click="removeCourse(i)">
 
-            <ul>
-                <li v-for="(v,k) in {name:'POOP', duration:35, location:'taipei',instructor:'mark ho'}">{{k}}/{{v}}</li>
-            </ul>
-            <ul>
-                <li v-for="(v,k,i) in {name:'POOP', duration:35, location:'taipei',instructor:'mark ho'}">[{{i}}]/{{k}}/{{v}}</li>
-            </ul>
- -->
-        <!--bla bla bla bla bla應該可以看得到-->
+                [{{i}}],{{c}}<input type="text" @click.stop /></li>
+        </ul>
+
     </section>
 </body>
 

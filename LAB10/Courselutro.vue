@@ -4,6 +4,8 @@
     <button @click="toggleCourseDetail">show detail</button>
     <button @click="toggleCurrent">修改本地端</button>
     <button @click="toggleParentCurrent">修改上層current</button>
+    <br />
+    <button @click="deleteCourse">刪除本門課程</button>
     <ul v-if="detailsVisible">
       <li>{{ name }}</li>
       <li>{{ duration }}</li>
@@ -16,6 +18,14 @@
 export default {
   emits: {
     "toggle-current": function (id) {
+      if (id) {
+        return true;
+      } else {
+        console.warn("id is missing");
+        return false;
+      }
+    },
+    "delete-current": function (id) {
       if (id) {
         return true;
       } else {
@@ -52,6 +62,9 @@ export default {
     toggleParentCurrent() {
       this.$emit("toggle-current", this.id);
       //this.$emit("toggle-current");
+    },
+    deleteCourse() {
+      this.$emit("delete-current", this.id);
     },
   },
 };

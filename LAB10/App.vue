@@ -9,6 +9,7 @@
         :name="c.name"
         :duration="c.duration"
         :current="c.current"
+        @toggle-current="toggleCurrentStatusInParent"
       ></course-intro>
     </ul>
   </div>
@@ -34,6 +35,14 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toggleCurrentStatusInParent(id) {
+      alert(`toggle fired with id=${id}`);
+      const course = this.courses.find((c) => c.id === id)
+      course.current = !course.current
+      console.log(`now, ${id} has course status ${course.current}`)
+    },
   },
 };
 </script>

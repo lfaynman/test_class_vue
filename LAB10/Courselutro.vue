@@ -14,6 +14,16 @@
 </template>
 <script>
 export default {
+  emits: {
+    "toggle-current": function (id) {
+      if (id) {
+        return true;
+      } else {
+        console.warn("id is missing");
+        return false;
+      }
+    },
+  },
   props: {
     id: { type: String, required: true },
     name: { type: String, required: true },
@@ -41,6 +51,7 @@ export default {
     },
     toggleParentCurrent() {
       this.$emit("toggle-current", this.id);
+      //this.$emit("toggle-current");
     },
   },
 };
